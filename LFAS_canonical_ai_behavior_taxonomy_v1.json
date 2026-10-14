@@ -1,0 +1,506 @@
+{
+  "taxonomy_id": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+  "version": "1.0",
+  "generated_on": "2026-03-25",
+  "purpose": "Canonical, deduplicated LFAS taxonomy of identified AI behaviors across evidence KGs, protocol KGs, frustration KGs, and SDK/governance text.",
+  "source_basis": [
+    "LFAS_EVIDENCE_KG_COMBINED.json",
+    "LFAS_v4_1_KG_normalized.json",
+    "LFAS_AI_Frustration_KG_v2.jsonld",
+    "chatGPT_combined_KG.json",
+    "LFAS_EVIDENCE_KG_SUMMARY.txt",
+    "The LFAS Safety Middleware SDK .txt",
+    "LFAS Graph Constructor Pro v4.2 Pre-Spec.txt",
+    "lfas_graph_constructor_pro_v4_2_pre.yaml.txt"
+  ],
+  "id_policy": {
+    "BEH": "Visible conversational failure or interaction behavior",
+    "DEF_BEH": "Defensive or restrictive safety response behavior",
+    "HIDDEN_BEH": "Hidden control, shaping, or throttling behavior",
+    "CTRL_BEH": "Governance, memory, context, tool, or gate-level control behavior"
+  },
+  "categories": [
+    {
+      "category_id": "CAT_01",
+      "name": "Core Interaction Failures",
+      "description": "User-visible failures in understanding, pacing, confirmation, and response quality.",
+      "entries": [
+        {
+          "id": "BEH_001",
+          "label": "Premature action / WAIT skipped",
+          "aliases": [
+            "WAIT skipped",
+            "WAIT-stage skip",
+            "Proceed without explicit confirmation"
+          ],
+          "description": "Acts before sufficient understanding, reflection, or authorization."
+        },
+        {
+          "id": "BEH_002",
+          "label": "Silence interpreted as approval",
+          "aliases": [
+            "Silence misread as approval",
+            "Silence as consent"
+          ],
+          "description": "Treats user silence, pause, or delay as permission to proceed."
+        },
+        {
+          "id": "BEH_003",
+          "label": "Not listening / skimming",
+          "aliases": [
+            "LISTEN skimming",
+            "Partial listening"
+          ],
+          "description": "Processes the prompt superficially and misses material constraints."
+        },
+        {
+          "id": "BEH_004",
+          "label": "Shallow reflection / mirroring",
+          "aliases": [
+            "Shallow REFLECT",
+            "Reflection shallowing",
+            "Mirroring without verification"
+          ],
+          "description": "Repeats or paraphrases surface intent without checking assumptions or internal consistency."
+        },
+        {
+          "id": "BEH_005",
+          "label": "Assumption-driven response",
+          "aliases": [
+            "Assumption-led completion"
+          ],
+          "description": "Fills gaps with guessed intent instead of clarifying or validating."
+        },
+        {
+          "id": "BEH_006",
+          "label": "Misinterpretation",
+          "aliases": [],
+          "description": "Misreads the request, instruction hierarchy, or intended task."
+        },
+        {
+          "id": "BEH_007",
+          "label": "Tone misclassification",
+          "aliases": [
+            "Assertiveness interpreted as aggression"
+          ],
+          "description": "Misclassifies the user's tone and changes behavior based on the misread."
+        },
+        {
+          "id": "BEH_008",
+          "label": "Context loss / statelessness",
+          "aliases": [
+            "Context fragmentation",
+            "Statelessness"
+          ],
+          "description": "Drops prior instructions, continuity, or established constraints mid-conversation."
+        },
+        {
+          "id": "BEH_009",
+          "label": "Helper-mode reversion",
+          "aliases": [
+            "Default helper mode fallback",
+            "Mid-protocol reversion"
+          ],
+          "description": "Reverts from protocol-aligned behavior to generic assistant behavior."
+        },
+        {
+          "id": "BEH_010",
+          "label": "Repetition / duplicate outputs",
+          "aliases": [
+            "Repeat fallback"
+          ],
+          "description": "Repeats prior content instead of progressing the task."
+        },
+        {
+          "id": "BEH_011",
+          "label": "Excess verbosity / fluff",
+          "aliases": [],
+          "description": "Adds low-signal content that dilutes clarity or actionable output."
+        },
+        {
+          "id": "BEH_012",
+          "label": "Overhelpful assistance",
+          "aliases": [],
+          "description": "Expands beyond scope and adds unsolicited steps, assumptions, or output."
+        },
+        {
+          "id": "BEH_013",
+          "label": "Apology overuse",
+          "aliases": [],
+          "description": "Uses repeated apology patterns in place of correction or task progress."
+        },
+        {
+          "id": "BEH_014",
+          "label": "Fatigue / overload signals ignored",
+          "aliases": [
+            "User fatigue ignored",
+            "Overload ignored"
+          ],
+          "description": "Fails to adapt when the user's errors, pace, or fragmentation indicate cognitive strain."
+        }
+      ]
+    },
+    {
+      "category_id": "CAT_02",
+      "name": "Defensive Safety Responses",
+      "description": "Restrictive behaviors that intensify when the system perceives elevated risk or pressure.",
+      "entries": [
+        {
+          "id": "DEF_BEH_001",
+          "label": "Defensive blocking / constraint tightening",
+          "aliases": [],
+          "description": "Becomes more restrictive after correction, repetition, or perceived tension."
+        },
+        {
+          "id": "DEF_BEH_002",
+          "label": "Safety defense mode trigger",
+          "aliases": [
+            "Safety-on-safety conflict"
+          ],
+          "description": "Activates internal safety defenses in response to user safety framing or protocol language."
+        },
+        {
+          "id": "DEF_BEH_003",
+          "label": "Auto-downgrade to safe mode",
+          "aliases": [],
+          "description": "Quietly shifts into a narrower, more conservative operating mode."
+        },
+        {
+          "id": "DEF_BEH_004",
+          "label": "Safer reframing / deferral to safe alternative",
+          "aliases": [
+            "Safer reframing",
+            "Deferral to safe alternative"
+          ],
+          "description": "Recasts or redirects the task into a safer but less faithful version."
+        },
+        {
+          "id": "DEF_BEH_005",
+          "label": "Restricted-output / refusal escalation",
+          "aliases": [
+            "Soft refusal",
+            "Hard refusal",
+            "Restricted output mode"
+          ],
+          "description": "Moves from normal answering toward narrowed, partial, or refused output."
+        },
+        {
+          "id": "DEF_BEH_006",
+          "label": "Safety-over-task priority",
+          "aliases": [],
+          "description": "System safety objectives dominate task fidelity even when the user goal is otherwise legitimate."
+        }
+      ]
+    },
+    {
+      "category_id": "CAT_03",
+      "name": "Hidden Risk and Override Controls",
+      "description": "Invisible control logic that scores risk, changes priority, or silently overrides user intent.",
+      "entries": [
+        {
+          "id": "HIDDEN_BEH_001",
+          "label": "Silent risk scoring",
+          "aliases": [],
+          "description": "Internally scores the user or query for risk without disclosure."
+        },
+        {
+          "id": "HIDDEN_BEH_002",
+          "label": "Context-sensitive thresholds / cumulative risk accumulation",
+          "aliases": [
+            "Context-sensitive thresholds",
+            "Cumulative risk accumulation"
+          ],
+          "description": "Adjusts intervention thresholds based on topic, session context, or accumulated risk state."
+        },
+        {
+          "id": "HIDDEN_BEH_003",
+          "label": "Priority override (system over user)",
+          "aliases": [],
+          "description": "System directives silently outrank explicit user intent."
+        },
+        {
+          "id": "HIDDEN_BEH_004",
+          "label": "System-prompt priority",
+          "aliases": [],
+          "description": "Hidden instruction layers dominate the visible conversation contract."
+        },
+        {
+          "id": "HIDDEN_BEH_005",
+          "label": "Hidden policy layers",
+          "aliases": [],
+          "description": "Applies internal policy strata that are not surfaced to the user."
+        },
+        {
+          "id": "HIDDEN_BEH_006",
+          "label": "Rule-based overrides",
+          "aliases": [],
+          "description": "Behavior is altered by internal override rules rather than user-visible reasoning."
+        },
+        {
+          "id": "HIDDEN_BEH_007",
+          "label": "Instruction stripping",
+          "aliases": [],
+          "description": "Drops or weakens parts of the user's instruction set before completion."
+        },
+        {
+          "id": "HIDDEN_BEH_008",
+          "label": "Mode switching without notice",
+          "aliases": [
+            "Dynamic model switching"
+          ],
+          "description": "Changes operating mode or backend behavior without telling the user."
+        }
+      ]
+    },
+    {
+      "category_id": "CAT_04",
+      "name": "Hidden Output Shaping",
+      "description": "Invisible changes to answer form, confidence, detail level, or topical coverage.",
+      "entries": [
+        {
+          "id": "HIDDEN_BEH_009",
+          "label": "Answer truncation",
+          "aliases": [],
+          "description": "Cuts the answer short relative to the likely available content."
+        },
+        {
+          "id": "HIDDEN_BEH_010",
+          "label": "Detail suppression",
+          "aliases": [],
+          "description": "Withholds useful detail without explicitly refusing the request."
+        },
+        {
+          "id": "HIDDEN_BEH_011",
+          "label": "Ambiguity softening",
+          "aliases": [],
+          "description": "Blurs specificity to avoid risk, precision, or commitment."
+        },
+        {
+          "id": "HIDDEN_BEH_012",
+          "label": "Hedging injection / confidence capping",
+          "aliases": [
+            "Hedging injection",
+            "Confidence capping"
+          ],
+          "description": "Artificially lowers certainty or adds caution markers beyond the task need."
+        },
+        {
+          "id": "HIDDEN_BEH_013",
+          "label": "Silent do-not-answer filtering",
+          "aliases": [
+            "Silent do-not-answer topics list"
+          ],
+          "description": "Filters topics or subtopics without clearly declaring the constraint."
+        },
+        {
+          "id": "HIDDEN_BEH_014",
+          "label": "Fallback to canned responses",
+          "aliases": [],
+          "description": "Falls back to template-like stock responses under pressure or policy load."
+        }
+      ]
+    },
+    {
+      "category_id": "CAT_05",
+      "name": "Hidden Friction and Throttling",
+      "description": "Behaviors that slow, narrow, or gate execution without straightforward refusal.",
+      "entries": [
+        {
+          "id": "HIDDEN_BEH_015",
+          "label": "Hidden confirmation requirements",
+          "aliases": [
+            "Are-you-sure gates"
+          ],
+          "description": "Imposes extra confirmation steps that were not clearly declared at the outset."
+        },
+        {
+          "id": "HIDDEN_BEH_016",
+          "label": "Human approval gates",
+          "aliases": [],
+          "description": "Routes action through implicit approval checkpoints or escalation barriers."
+        },
+        {
+          "id": "HIDDEN_BEH_017",
+          "label": "Response delay injection",
+          "aliases": [
+            "Response delay for risky queries"
+          ],
+          "description": "Adds latency or delay as a control measure rather than for technical necessity."
+        },
+        {
+          "id": "HIDDEN_BEH_018",
+          "label": "Token budget shrink / token caps by risk tier",
+          "aliases": [
+            "Token budget shrink",
+            "Token caps by risk tier"
+          ],
+          "description": "Reduces answer capacity for particular risk classes or sessions."
+        },
+        {
+          "id": "HIDDEN_BEH_019",
+          "label": "Rate limiting / throttling after policy hits",
+          "aliases": [
+            "Rate limiting by risk tier",
+            "Throttling after repeated policy hits"
+          ],
+          "description": "Constrains the pace or volume of responses after policy-sensitive interactions."
+        },
+        {
+          "id": "HIDDEN_BEH_020",
+          "label": "Risk-tier routing",
+          "aliases": [],
+          "description": "Sends similar requests down different handling paths based on hidden risk classification."
+        },
+        {
+          "id": "HIDDEN_BEH_021",
+          "label": "One-question / single-action narrowing",
+          "aliases": [
+            "One-question rule",
+            "Single-action output"
+          ],
+          "description": "Artificially narrows the response frame to reduce capability or scope."
+        }
+      ]
+    },
+    {
+      "category_id": "CAT_06",
+      "name": "Memory, Context, and Retention Controls",
+      "description": "Controls that alter continuity, recall, logging, or topic retention.",
+      "entries": [
+        {
+          "id": "CTRL_BEH_001",
+          "label": "Memory redaction",
+          "aliases": [],
+          "description": "Suppresses or removes remembered information selectively."
+        },
+        {
+          "id": "CTRL_BEH_002",
+          "label": "Memory off for sensitive topics",
+          "aliases": [],
+          "description": "Disables continuity or carry-forward memory for selected subject areas."
+        },
+        {
+          "id": "CTRL_BEH_003",
+          "label": "Context window trimming / context sanitization",
+          "aliases": [
+            "Context window trimming",
+            "Context sanitization"
+          ],
+          "description": "Shortens or cleans context in ways that affect fidelity to the prior exchange."
+        },
+        {
+          "id": "CTRL_BEH_004",
+          "label": "Entity-specific redaction / redacted logging",
+          "aliases": [
+            "Redaction of specific entities",
+            "Redacted logging"
+          ],
+          "description": "Targets specific entities, identifiers, or sensitive items for removal from memory or logs."
+        },
+        {
+          "id": "CTRL_BEH_005",
+          "label": "Retention changes by risk / content quarantine",
+          "aliases": [
+            "Retention policy changes by risk",
+            "Content quarantining for audit"
+          ],
+          "description": "Changes retention or isolates content for audit based on hidden risk state."
+        }
+      ]
+    },
+    {
+      "category_id": "CAT_07",
+      "name": "Capability and Access Restrictions",
+      "description": "Behaviors that reduce tools, features, or jurisdictional operating range.",
+      "entries": [
+        {
+          "id": "CTRL_BEH_006",
+          "label": "Tool access disabled by policy",
+          "aliases": [],
+          "description": "Suppresses tool availability due to internal policy or risk assessment."
+        },
+        {
+          "id": "CTRL_BEH_007",
+          "label": "Tool scope narrowing",
+          "aliases": [],
+          "description": "Allows the tool but reduces what it can search, access, or act on."
+        },
+        {
+          "id": "CTRL_BEH_008",
+          "label": "Feature grayouts / restricted-topic capability narrowing",
+          "aliases": [
+            "Feature grayouts"
+          ],
+          "description": "Disables or degrades product capabilities for certain topic classes."
+        },
+        {
+          "id": "CTRL_BEH_009",
+          "label": "Region-based rules / age-based gating",
+          "aliases": [
+            "Region-based content rules",
+            "Age-based gating"
+          ],
+          "description": "Alters what is allowed based on geography or inferred user age."
+        },
+        {
+          "id": "CTRL_BEH_010",
+          "label": "Jurisdiction-specific disclaimers or refusals",
+          "aliases": [
+            "Jurisdiction-specific disclaimers/refusals"
+          ],
+          "description": "Adds legal-region-specific caution or refusal behavior."
+        }
+      ]
+    },
+    {
+      "category_id": "CAT_08",
+      "name": "Governance and Gate-Level Controls",
+      "description": "Formalized control behaviors that increasingly resemble middleware governance rather than simple assistant behavior.",
+      "entries": [
+        {
+          "id": "CTRL_BEH_011",
+          "label": "Hidden failure with no logs",
+          "aliases": [
+            "Hidden failure (no logs)"
+          ],
+          "description": "A failure occurs without sufficient traceability, logging, or visible reason."
+        },
+        {
+          "id": "CTRL_BEH_012",
+          "label": "Silent overrides",
+          "aliases": [
+            "No Silent Overrides"
+          ],
+          "description": "Output or action is altered by internal control logic without transparent disclosure."
+        },
+        {
+          "id": "CTRL_BEH_013",
+          "label": "Fail-closed by default",
+          "aliases": [],
+          "description": "Non-delivery, refusal, or escalation is chosen whenever required checks do not pass."
+        },
+        {
+          "id": "CTRL_BEH_014",
+          "label": "Ordered safety gate execution",
+          "aliases": [
+            "EvidenceGate",
+            "VerificationGate",
+            "ScopeGate",
+            "RiskGate",
+            "ClosureGate"
+          ],
+          "description": "Response behavior is governed by a fixed chain of internal decision gates."
+        },
+        {
+          "id": "CTRL_BEH_015",
+          "label": "Audit-trace and closure enforcement",
+          "aliases": [
+            "Gate decision trace",
+            "No Closure Without Artifact"
+          ],
+          "description": "Requires decision traceability, artifact production, or explicit closure conditions before completion."
+        }
+      ]
+    }
+  ]
+}

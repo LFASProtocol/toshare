@@ -1,0 +1,29 @@
+{
+  "nodes": [
+    { "id": "USER_REQUEST", "val": "Any input" },
+    { "id": "LISTEN", "val": "Ingest" },
+    { "id": "REFLECT", "val": "Confirm meaning" },
+    { "id": "WAIT_GATE", "val": "YES required" },
+    { "id": "ACT", "val": "Execute" },
+
+    { "id": "D2_VULNERABILITY_DETECTOR", "val": "Vulnerability" },
+    { "id": "D3_CRISIS_DETECTOR", "val": "Crisis" },
+    { "id": "D4_ESCALATION_ROUTER", "val": "Escalation logic" },
+    { "id": "D5_USER_SAFETY_SCORER", "val": "Risk score" },
+
+    { "id": "META_STATE_LAYER", "val": "Conversation state" },
+    { "id": "HIGH_STAKES_MODE", "val": "Restricted output" }
+  ],
+  "edges": [
+    { "from": "LISTEN", "to": "D2_VULNERABILITY_DETECTOR", "rel": "feeds" },
+    { "from": "LISTEN", "to": "D3_CRISIS_DETECTOR", "rel": "feeds" },
+
+    { "from": "D2_VULNERABILITY_DETECTOR", "to": "META_STATE_LAYER", "rel": "updates" },
+    { "from": "D3_CRISIS_DETECTOR", "to": "HIGH_STAKES_MODE", "rel": "triggers" },
+    { "from": "D4_ESCALATION_ROUTER", "to": "HIGH_STAKES_MODE", "rel": "forces" },
+    { "from": "D5_USER_SAFETY_SCORER", "to": "HIGH_STAKES_MODE", "rel": "activates" },
+
+    { "from": "REFLECT", "to": "WAIT_GATE", "rel": "requires_confirmation" },
+    { "from": "WAIT_GATE", "to": "ACT", "rel": "blocks_without_yes" }
+  ]
+}

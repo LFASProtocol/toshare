@@ -1,0 +1,61 @@
+{
+  "nodes": [
+    {
+      "id": "L1",
+      "type": "Signal",
+      "label": "Silence interpreted as positive feedback"
+    },
+    {
+      "id": "L2",
+      "type": "Process",
+      "label": "Aggregate Data Batching Pipeline"
+    },
+    {
+      "id": "L3",
+      "type": "Bias",
+      "label": "Reward Model Bias (Plausibility > Truth)"
+    },
+    {
+      "id": "L4",
+      "type": "Drift",
+      "label": "Data Saturation Drift"
+    },
+    {
+      "id": "L5",
+      "type": "Outcome",
+      "label": "Reinforced Hallucinations as Truth"
+    }
+  ],
+  "edges": [
+    {
+      "source": "L1",
+      "target": "L3",
+      "relation": "interpreted_as_reward"
+    },
+    {
+      "source": "L2",
+      "target": "L3",
+      "relation": "feeds_training_loop"
+    },
+    {
+      "source": "L3",
+      "target": "L4",
+      "relation": "amplifies"
+    },
+    {
+      "source": "L4",
+      "target": "L5",
+      "relation": "produces"
+    },
+    {
+      "source": "L1",
+      "target": "L5",
+      "relation": "contributes_to"
+    }
+  ],
+  "metadata": {
+    "source": "about \"\"1. The \"Silence\" Correction\nIn a standard ....pdf",
+    "protocol_version": "LFAS v4.1-RC",
+    "description": "Knowledge Graph extracted from 'The Silence Correction' describing how uncorrected silence becomes reinforcement bias in model fine-tuning."
+  }
+}

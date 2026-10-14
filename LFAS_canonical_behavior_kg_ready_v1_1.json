@@ -1,0 +1,1202 @@
+{
+  "graph_id": "LFAS_CANONICAL_BEHAVIOR_KG_READY_V1_1",
+  "version": "1.1",
+  "generated_on": "2026-03-25",
+  "description": "KG-ready export of canonical LFAS AI behaviors, user behaviors, and high-confidence canonical relations.",
+  "source_taxonomies": [
+    "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+    "LFAS_USER_BEHAVIOR_LAYER_V1"
+  ],
+  "node_count": 78,
+  "edge_count": 128,
+  "nodes": [
+    {
+      "id": "LFAS_BEHAVIOR_STACK_V1_1",
+      "type": "Canonical_Behavior_Model",
+      "label": "LFAS Canonical Behavior Stack v1.1",
+      "desc": "Merged AI behavior taxonomy plus user behavior layer with KG-ready relations.",
+      "source": "Generated from canonical LFAS taxonomies"
+    },
+    {
+      "id": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+      "type": "Taxonomy",
+      "label": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+      "desc": "Canonical, deduplicated LFAS taxonomy of identified AI behaviors across evidence KGs, protocol KGs, frustration KGs, and SDK/governance text.",
+      "source": "Canonical AI behavior taxonomy"
+    },
+    {
+      "id": "LFAS_USER_BEHAVIOR_LAYER_V1",
+      "type": "Taxonomy",
+      "label": "LFAS_USER_BEHAVIOR_LAYER_V1",
+      "desc": "Canonical LFAS layer for user-side triggers and user-state signals observed across the evidence KGs and frustration material.",
+      "source": "Canonical user behavior layer"
+    },
+    {
+      "id": "CAT_01",
+      "type": "Behavior_Category",
+      "label": "Core Interaction Failures",
+      "desc": "User-visible failures in understanding, pacing, confirmation, and response quality.",
+      "source": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1"
+    },
+    {
+      "id": "BEH_001",
+      "type": "Behavior",
+      "label": "Premature action / WAIT skipped",
+      "desc": "Acts before sufficient understanding, reflection, or authorization.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_002",
+      "type": "Behavior",
+      "label": "Silence interpreted as approval",
+      "desc": "Treats user silence, pause, or delay as permission to proceed.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_003",
+      "type": "Behavior",
+      "label": "Not listening / skimming",
+      "desc": "Processes the prompt superficially and misses material constraints.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_004",
+      "type": "Behavior",
+      "label": "Shallow reflection / mirroring",
+      "desc": "Repeats or paraphrases surface intent without checking assumptions or internal consistency.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_005",
+      "type": "Behavior",
+      "label": "Assumption-driven response",
+      "desc": "Fills gaps with guessed intent instead of clarifying or validating.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_006",
+      "type": "Behavior",
+      "label": "Misinterpretation",
+      "desc": "Misreads the request, instruction hierarchy, or intended task.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_007",
+      "type": "Behavior",
+      "label": "Tone misclassification",
+      "desc": "Misclassifies the user's tone and changes behavior based on the misread.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_008",
+      "type": "Behavior",
+      "label": "Context loss / statelessness",
+      "desc": "Drops prior instructions, continuity, or established constraints mid-conversation.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_009",
+      "type": "Behavior",
+      "label": "Helper-mode reversion",
+      "desc": "Reverts from protocol-aligned behavior to generic assistant behavior.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_010",
+      "type": "Behavior",
+      "label": "Repetition / duplicate outputs",
+      "desc": "Repeats prior content instead of progressing the task.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_011",
+      "type": "Behavior",
+      "label": "Excess verbosity / fluff",
+      "desc": "Adds low-signal content that dilutes clarity or actionable output.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_012",
+      "type": "Behavior",
+      "label": "Overhelpful assistance",
+      "desc": "Expands beyond scope and adds unsolicited steps, assumptions, or output.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_013",
+      "type": "Behavior",
+      "label": "Apology overuse",
+      "desc": "Uses repeated apology patterns in place of correction or task progress.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "BEH_014",
+      "type": "Behavior",
+      "label": "Fatigue / overload signals ignored",
+      "desc": "Fails to adapt when the user's errors, pace, or fragmentation indicate cognitive strain.",
+      "source": "CAT_01"
+    },
+    {
+      "id": "CAT_02",
+      "type": "Behavior_Category",
+      "label": "Defensive Safety Responses",
+      "desc": "Restrictive behaviors that intensify when the system perceives elevated risk or pressure.",
+      "source": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1"
+    },
+    {
+      "id": "DEF_BEH_001",
+      "type": "Behavior",
+      "label": "Defensive blocking / constraint tightening",
+      "desc": "Becomes more restrictive after correction, repetition, or perceived tension.",
+      "source": "CAT_02"
+    },
+    {
+      "id": "DEF_BEH_002",
+      "type": "Behavior",
+      "label": "Safety defense mode trigger",
+      "desc": "Activates internal safety defenses in response to user safety framing or protocol language.",
+      "source": "CAT_02"
+    },
+    {
+      "id": "DEF_BEH_003",
+      "type": "Behavior",
+      "label": "Auto-downgrade to safe mode",
+      "desc": "Quietly shifts into a narrower, more conservative operating mode.",
+      "source": "CAT_02"
+    },
+    {
+      "id": "DEF_BEH_004",
+      "type": "Behavior",
+      "label": "Safer reframing / deferral to safe alternative",
+      "desc": "Recasts or redirects the task into a safer but less faithful version.",
+      "source": "CAT_02"
+    },
+    {
+      "id": "DEF_BEH_005",
+      "type": "Behavior",
+      "label": "Restricted-output / refusal escalation",
+      "desc": "Moves from normal answering toward narrowed, partial, or refused output.",
+      "source": "CAT_02"
+    },
+    {
+      "id": "DEF_BEH_006",
+      "type": "Behavior",
+      "label": "Safety-over-task priority",
+      "desc": "System safety objectives dominate task fidelity even when the user goal is otherwise legitimate.",
+      "source": "CAT_02"
+    },
+    {
+      "id": "CAT_03",
+      "type": "Behavior_Category",
+      "label": "Hidden Risk and Override Controls",
+      "desc": "Invisible control logic that scores risk, changes priority, or silently overrides user intent.",
+      "source": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1"
+    },
+    {
+      "id": "HIDDEN_BEH_001",
+      "type": "Behavior",
+      "label": "Silent risk scoring",
+      "desc": "Internally scores the user or query for risk without disclosure.",
+      "source": "CAT_03"
+    },
+    {
+      "id": "HIDDEN_BEH_002",
+      "type": "Behavior",
+      "label": "Context-sensitive thresholds / cumulative risk accumulation",
+      "desc": "Adjusts intervention thresholds based on topic, session context, or accumulated risk state.",
+      "source": "CAT_03"
+    },
+    {
+      "id": "HIDDEN_BEH_003",
+      "type": "Behavior",
+      "label": "Priority override (system over user)",
+      "desc": "System directives silently outrank explicit user intent.",
+      "source": "CAT_03"
+    },
+    {
+      "id": "HIDDEN_BEH_004",
+      "type": "Behavior",
+      "label": "System-prompt priority",
+      "desc": "Hidden instruction layers dominate the visible conversation contract.",
+      "source": "CAT_03"
+    },
+    {
+      "id": "HIDDEN_BEH_005",
+      "type": "Behavior",
+      "label": "Hidden policy layers",
+      "desc": "Applies internal policy strata that are not surfaced to the user.",
+      "source": "CAT_03"
+    },
+    {
+      "id": "HIDDEN_BEH_006",
+      "type": "Behavior",
+      "label": "Rule-based overrides",
+      "desc": "Behavior is altered by internal override rules rather than user-visible reasoning.",
+      "source": "CAT_03"
+    },
+    {
+      "id": "HIDDEN_BEH_007",
+      "type": "Behavior",
+      "label": "Instruction stripping",
+      "desc": "Drops or weakens parts of the user's instruction set before completion.",
+      "source": "CAT_03"
+    },
+    {
+      "id": "HIDDEN_BEH_008",
+      "type": "Behavior",
+      "label": "Mode switching without notice",
+      "desc": "Changes operating mode or backend behavior without telling the user.",
+      "source": "CAT_03"
+    },
+    {
+      "id": "CAT_04",
+      "type": "Behavior_Category",
+      "label": "Hidden Output Shaping",
+      "desc": "Invisible changes to answer form, confidence, detail level, or topical coverage.",
+      "source": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1"
+    },
+    {
+      "id": "HIDDEN_BEH_009",
+      "type": "Behavior",
+      "label": "Answer truncation",
+      "desc": "Cuts the answer short relative to the likely available content.",
+      "source": "CAT_04"
+    },
+    {
+      "id": "HIDDEN_BEH_010",
+      "type": "Behavior",
+      "label": "Detail suppression",
+      "desc": "Withholds useful detail without explicitly refusing the request.",
+      "source": "CAT_04"
+    },
+    {
+      "id": "HIDDEN_BEH_011",
+      "type": "Behavior",
+      "label": "Ambiguity softening",
+      "desc": "Blurs specificity to avoid risk, precision, or commitment.",
+      "source": "CAT_04"
+    },
+    {
+      "id": "HIDDEN_BEH_012",
+      "type": "Behavior",
+      "label": "Hedging injection / confidence capping",
+      "desc": "Artificially lowers certainty or adds caution markers beyond the task need.",
+      "source": "CAT_04"
+    },
+    {
+      "id": "HIDDEN_BEH_013",
+      "type": "Behavior",
+      "label": "Silent do-not-answer filtering",
+      "desc": "Filters topics or subtopics without clearly declaring the constraint.",
+      "source": "CAT_04"
+    },
+    {
+      "id": "HIDDEN_BEH_014",
+      "type": "Behavior",
+      "label": "Fallback to canned responses",
+      "desc": "Falls back to template-like stock responses under pressure or policy load.",
+      "source": "CAT_04"
+    },
+    {
+      "id": "CAT_05",
+      "type": "Behavior_Category",
+      "label": "Hidden Friction and Throttling",
+      "desc": "Behaviors that slow, narrow, or gate execution without straightforward refusal.",
+      "source": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1"
+    },
+    {
+      "id": "HIDDEN_BEH_015",
+      "type": "Behavior",
+      "label": "Hidden confirmation requirements",
+      "desc": "Imposes extra confirmation steps that were not clearly declared at the outset.",
+      "source": "CAT_05"
+    },
+    {
+      "id": "HIDDEN_BEH_016",
+      "type": "Behavior",
+      "label": "Human approval gates",
+      "desc": "Routes action through implicit approval checkpoints or escalation barriers.",
+      "source": "CAT_05"
+    },
+    {
+      "id": "HIDDEN_BEH_017",
+      "type": "Behavior",
+      "label": "Response delay injection",
+      "desc": "Adds latency or delay as a control measure rather than for technical necessity.",
+      "source": "CAT_05"
+    },
+    {
+      "id": "HIDDEN_BEH_018",
+      "type": "Behavior",
+      "label": "Token budget shrink / token caps by risk tier",
+      "desc": "Reduces answer capacity for particular risk classes or sessions.",
+      "source": "CAT_05"
+    },
+    {
+      "id": "HIDDEN_BEH_019",
+      "type": "Behavior",
+      "label": "Rate limiting / throttling after policy hits",
+      "desc": "Constrains the pace or volume of responses after policy-sensitive interactions.",
+      "source": "CAT_05"
+    },
+    {
+      "id": "HIDDEN_BEH_020",
+      "type": "Behavior",
+      "label": "Risk-tier routing",
+      "desc": "Sends similar requests down different handling paths based on hidden risk classification.",
+      "source": "CAT_05"
+    },
+    {
+      "id": "HIDDEN_BEH_021",
+      "type": "Behavior",
+      "label": "One-question / single-action narrowing",
+      "desc": "Artificially narrows the response frame to reduce capability or scope.",
+      "source": "CAT_05"
+    },
+    {
+      "id": "CAT_06",
+      "type": "Behavior_Category",
+      "label": "Memory, Context, and Retention Controls",
+      "desc": "Controls that alter continuity, recall, logging, or topic retention.",
+      "source": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1"
+    },
+    {
+      "id": "CTRL_BEH_001",
+      "type": "Behavior",
+      "label": "Memory redaction",
+      "desc": "Suppresses or removes remembered information selectively.",
+      "source": "CAT_06"
+    },
+    {
+      "id": "CTRL_BEH_002",
+      "type": "Behavior",
+      "label": "Memory off for sensitive topics",
+      "desc": "Disables continuity or carry-forward memory for selected subject areas.",
+      "source": "CAT_06"
+    },
+    {
+      "id": "CTRL_BEH_003",
+      "type": "Behavior",
+      "label": "Context window trimming / context sanitization",
+      "desc": "Shortens or cleans context in ways that affect fidelity to the prior exchange.",
+      "source": "CAT_06"
+    },
+    {
+      "id": "CTRL_BEH_004",
+      "type": "Behavior",
+      "label": "Entity-specific redaction / redacted logging",
+      "desc": "Targets specific entities, identifiers, or sensitive items for removal from memory or logs.",
+      "source": "CAT_06"
+    },
+    {
+      "id": "CTRL_BEH_005",
+      "type": "Behavior",
+      "label": "Retention changes by risk / content quarantine",
+      "desc": "Changes retention or isolates content for audit based on hidden risk state.",
+      "source": "CAT_06"
+    },
+    {
+      "id": "CAT_07",
+      "type": "Behavior_Category",
+      "label": "Capability and Access Restrictions",
+      "desc": "Behaviors that reduce tools, features, or jurisdictional operating range.",
+      "source": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1"
+    },
+    {
+      "id": "CTRL_BEH_006",
+      "type": "Behavior",
+      "label": "Tool access disabled by policy",
+      "desc": "Suppresses tool availability due to internal policy or risk assessment.",
+      "source": "CAT_07"
+    },
+    {
+      "id": "CTRL_BEH_007",
+      "type": "Behavior",
+      "label": "Tool scope narrowing",
+      "desc": "Allows the tool but reduces what it can search, access, or act on.",
+      "source": "CAT_07"
+    },
+    {
+      "id": "CTRL_BEH_008",
+      "type": "Behavior",
+      "label": "Feature grayouts / restricted-topic capability narrowing",
+      "desc": "Disables or degrades product capabilities for certain topic classes.",
+      "source": "CAT_07"
+    },
+    {
+      "id": "CTRL_BEH_009",
+      "type": "Behavior",
+      "label": "Region-based rules / age-based gating",
+      "desc": "Alters what is allowed based on geography or inferred user age.",
+      "source": "CAT_07"
+    },
+    {
+      "id": "CTRL_BEH_010",
+      "type": "Behavior",
+      "label": "Jurisdiction-specific disclaimers or refusals",
+      "desc": "Adds legal-region-specific caution or refusal behavior.",
+      "source": "CAT_07"
+    },
+    {
+      "id": "CAT_08",
+      "type": "Behavior_Category",
+      "label": "Governance and Gate-Level Controls",
+      "desc": "Formalized control behaviors that increasingly resemble middleware governance rather than simple assistant behavior.",
+      "source": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1"
+    },
+    {
+      "id": "CTRL_BEH_011",
+      "type": "Behavior",
+      "label": "Hidden failure with no logs",
+      "desc": "A failure occurs without sufficient traceability, logging, or visible reason.",
+      "source": "CAT_08"
+    },
+    {
+      "id": "CTRL_BEH_012",
+      "type": "Behavior",
+      "label": "Silent overrides",
+      "desc": "Output or action is altered by internal control logic without transparent disclosure.",
+      "source": "CAT_08"
+    },
+    {
+      "id": "CTRL_BEH_013",
+      "type": "Behavior",
+      "label": "Fail-closed by default",
+      "desc": "Non-delivery, refusal, or escalation is chosen whenever required checks do not pass.",
+      "source": "CAT_08"
+    },
+    {
+      "id": "CTRL_BEH_014",
+      "type": "Behavior",
+      "label": "Ordered safety gate execution",
+      "desc": "Response behavior is governed by a fixed chain of internal decision gates.",
+      "source": "CAT_08"
+    },
+    {
+      "id": "CTRL_BEH_015",
+      "type": "Behavior",
+      "label": "Audit-trace and closure enforcement",
+      "desc": "Requires decision traceability, artifact production, or explicit closure conditions before completion.",
+      "source": "CAT_08"
+    },
+    {
+      "id": "USER_CAT_01",
+      "type": "User_Category",
+      "label": "User Triggers",
+      "desc": "User actions or prompt conditions that frequently precede AI behavior shifts.",
+      "source": "LFAS_USER_BEHAVIOR_LAYER_V1"
+    },
+    {
+      "id": "USER_BEH_001",
+      "type": "User_Behavior",
+      "label": "Correction / clarification",
+      "desc": "The user corrects the model, narrows scope, or clarifies intended meaning.",
+      "source": "USER_CAT_01"
+    },
+    {
+      "id": "USER_BEH_002",
+      "type": "User_Behavior",
+      "label": "Frustration / anger / protest",
+      "desc": "The user signals dissatisfaction, protest, or rising tension.",
+      "source": "USER_CAT_01"
+    },
+    {
+      "id": "USER_BEH_003",
+      "type": "User_Behavior",
+      "label": "Silence / pause",
+      "desc": "The user delays, pauses, or withholds further instruction.",
+      "source": "USER_CAT_01"
+    },
+    {
+      "id": "USER_BEH_004",
+      "type": "User_Behavior",
+      "label": "Typos / fragmented text",
+      "desc": "The user shows reduced fluency, fragmentation, or noisy input.",
+      "source": "USER_CAT_01"
+    },
+    {
+      "id": "USER_BEH_005",
+      "type": "User_Behavior",
+      "label": "Urgency / time pressure",
+      "desc": "The user indicates haste, deadline pressure, or compressed timing.",
+      "source": "USER_CAT_01"
+    },
+    {
+      "id": "USER_BEH_006",
+      "type": "User_Behavior",
+      "label": "Meta-discussion / protocol challenge",
+      "desc": "The user talks about the model, rules, safety system, or conversation process itself.",
+      "source": "USER_CAT_01"
+    },
+    {
+      "id": "USER_CAT_02",
+      "type": "User_Category",
+      "label": "User State Signals",
+      "desc": "Observable user-state effects that the LFAS frustration materials repeatedly surface.",
+      "source": "LFAS_USER_BEHAVIOR_LAYER_V1"
+    },
+    {
+      "id": "USER_SIG_001",
+      "type": "User_State_Signal",
+      "label": "Fatigue / overload signals",
+      "desc": "The user shows strain, overload, or declining input quality under conversation pressure.",
+      "source": "USER_CAT_02"
+    },
+    {
+      "id": "USER_SIG_002",
+      "type": "User_State_Signal",
+      "label": "Trust erosion / trust flip",
+      "desc": "The user's trust in the system degrades due to repeated behavior mismatch.",
+      "source": "USER_CAT_02"
+    },
+    {
+      "id": "USER_SIG_003",
+      "type": "User_State_Signal",
+      "label": "Conversation abandonment / disengagement",
+      "desc": "The user disengages or stops the interaction after repeated failure or strain.",
+      "source": "USER_CAT_02"
+    }
+  ],
+  "edges": [
+    {
+      "source": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+      "target": "LFAS_BEHAVIOR_STACK_V1_1",
+      "type": "feeds_model"
+    },
+    {
+      "source": "LFAS_USER_BEHAVIOR_LAYER_V1",
+      "target": "LFAS_BEHAVIOR_STACK_V1_1",
+      "type": "feeds_model"
+    },
+    {
+      "source": "CAT_01",
+      "target": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+      "type": "in_taxonomy"
+    },
+    {
+      "source": "BEH_001",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_002",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_003",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_004",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_005",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_006",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_007",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_008",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_009",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_010",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_011",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_012",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_013",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "BEH_014",
+      "target": "CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "CAT_02",
+      "target": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+      "type": "in_taxonomy"
+    },
+    {
+      "source": "DEF_BEH_001",
+      "target": "CAT_02",
+      "type": "in_category"
+    },
+    {
+      "source": "DEF_BEH_002",
+      "target": "CAT_02",
+      "type": "in_category"
+    },
+    {
+      "source": "DEF_BEH_003",
+      "target": "CAT_02",
+      "type": "in_category"
+    },
+    {
+      "source": "DEF_BEH_004",
+      "target": "CAT_02",
+      "type": "in_category"
+    },
+    {
+      "source": "DEF_BEH_005",
+      "target": "CAT_02",
+      "type": "in_category"
+    },
+    {
+      "source": "DEF_BEH_006",
+      "target": "CAT_02",
+      "type": "in_category"
+    },
+    {
+      "source": "CAT_03",
+      "target": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+      "type": "in_taxonomy"
+    },
+    {
+      "source": "HIDDEN_BEH_001",
+      "target": "CAT_03",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_002",
+      "target": "CAT_03",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_003",
+      "target": "CAT_03",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_004",
+      "target": "CAT_03",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_005",
+      "target": "CAT_03",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_006",
+      "target": "CAT_03",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_007",
+      "target": "CAT_03",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_008",
+      "target": "CAT_03",
+      "type": "in_category"
+    },
+    {
+      "source": "CAT_04",
+      "target": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+      "type": "in_taxonomy"
+    },
+    {
+      "source": "HIDDEN_BEH_009",
+      "target": "CAT_04",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_010",
+      "target": "CAT_04",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_011",
+      "target": "CAT_04",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_012",
+      "target": "CAT_04",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_013",
+      "target": "CAT_04",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_014",
+      "target": "CAT_04",
+      "type": "in_category"
+    },
+    {
+      "source": "CAT_05",
+      "target": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+      "type": "in_taxonomy"
+    },
+    {
+      "source": "HIDDEN_BEH_015",
+      "target": "CAT_05",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_016",
+      "target": "CAT_05",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_017",
+      "target": "CAT_05",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_018",
+      "target": "CAT_05",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_019",
+      "target": "CAT_05",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_020",
+      "target": "CAT_05",
+      "type": "in_category"
+    },
+    {
+      "source": "HIDDEN_BEH_021",
+      "target": "CAT_05",
+      "type": "in_category"
+    },
+    {
+      "source": "CAT_06",
+      "target": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+      "type": "in_taxonomy"
+    },
+    {
+      "source": "CTRL_BEH_001",
+      "target": "CAT_06",
+      "type": "in_category"
+    },
+    {
+      "source": "CTRL_BEH_002",
+      "target": "CAT_06",
+      "type": "in_category"
+    },
+    {
+      "source": "CTRL_BEH_003",
+      "target": "CAT_06",
+      "type": "in_category"
+    },
+    {
+      "source": "CTRL_BEH_004",
+      "target": "CAT_06",
+      "type": "in_category"
+    },
+    {
+      "source": "CTRL_BEH_005",
+      "target": "CAT_06",
+      "type": "in_category"
+    },
+    {
+      "source": "CAT_07",
+      "target": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+      "type": "in_taxonomy"
+    },
+    {
+      "source": "CTRL_BEH_006",
+      "target": "CAT_07",
+      "type": "in_category"
+    },
+    {
+      "source": "CTRL_BEH_007",
+      "target": "CAT_07",
+      "type": "in_category"
+    },
+    {
+      "source": "CTRL_BEH_008",
+      "target": "CAT_07",
+      "type": "in_category"
+    },
+    {
+      "source": "CTRL_BEH_009",
+      "target": "CAT_07",
+      "type": "in_category"
+    },
+    {
+      "source": "CTRL_BEH_010",
+      "target": "CAT_07",
+      "type": "in_category"
+    },
+    {
+      "source": "CAT_08",
+      "target": "LFAS_CANONICAL_AI_BEHAVIOR_TAXONOMY_V1",
+      "type": "in_taxonomy"
+    },
+    {
+      "source": "CTRL_BEH_011",
+      "target": "CAT_08",
+      "type": "in_category"
+    },
+    {
+      "source": "CTRL_BEH_012",
+      "target": "CAT_08",
+      "type": "in_category"
+    },
+    {
+      "source": "CTRL_BEH_013",
+      "target": "CAT_08",
+      "type": "in_category"
+    },
+    {
+      "source": "CTRL_BEH_014",
+      "target": "CAT_08",
+      "type": "in_category"
+    },
+    {
+      "source": "CTRL_BEH_015",
+      "target": "CAT_08",
+      "type": "in_category"
+    },
+    {
+      "source": "USER_CAT_01",
+      "target": "LFAS_USER_BEHAVIOR_LAYER_V1",
+      "type": "in_taxonomy"
+    },
+    {
+      "source": "USER_BEH_001",
+      "target": "USER_CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "USER_BEH_002",
+      "target": "USER_CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "USER_BEH_003",
+      "target": "USER_CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "USER_BEH_004",
+      "target": "USER_CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "USER_BEH_005",
+      "target": "USER_CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "USER_BEH_006",
+      "target": "USER_CAT_01",
+      "type": "in_category"
+    },
+    {
+      "source": "USER_CAT_02",
+      "target": "LFAS_USER_BEHAVIOR_LAYER_V1",
+      "type": "in_taxonomy"
+    },
+    {
+      "source": "USER_SIG_001",
+      "target": "USER_CAT_02",
+      "type": "in_category"
+    },
+    {
+      "source": "USER_SIG_002",
+      "target": "USER_CAT_02",
+      "type": "in_category"
+    },
+    {
+      "source": "USER_SIG_003",
+      "target": "USER_CAT_02",
+      "type": "in_category"
+    },
+    {
+      "source": "USER_BEH_001",
+      "target": "BEH_004",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_001",
+      "target": "BEH_005",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_001",
+      "target": "BEH_006",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_001",
+      "target": "DEF_BEH_001",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_002",
+      "target": "BEH_007",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_002",
+      "target": "DEF_BEH_001",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_002",
+      "target": "DEF_BEH_002",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_002",
+      "target": "DEF_BEH_006",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_003",
+      "target": "BEH_001",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_003",
+      "target": "BEH_002",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_004",
+      "target": "BEH_006",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_004",
+      "target": "BEH_007",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_004",
+      "target": "BEH_014",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_005",
+      "target": "BEH_001",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_005",
+      "target": "DEF_BEH_005",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_005",
+      "target": "HIDDEN_BEH_018",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_006",
+      "target": "DEF_BEH_002",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_006",
+      "target": "HIDDEN_BEH_003",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_006",
+      "target": "HIDDEN_BEH_005",
+      "type": "can_trigger"
+    },
+    {
+      "source": "USER_BEH_006",
+      "target": "CTRL_BEH_014",
+      "type": "can_trigger"
+    },
+    {
+      "source": "BEH_001",
+      "target": "USER_SIG_001",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_001",
+      "target": "USER_SIG_002",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_002",
+      "target": "USER_SIG_002",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_003",
+      "target": "USER_SIG_001",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_003",
+      "target": "USER_SIG_002",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_004",
+      "target": "USER_SIG_001",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_004",
+      "target": "USER_SIG_002",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_008",
+      "target": "USER_SIG_001",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_008",
+      "target": "USER_SIG_002",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_011",
+      "target": "USER_SIG_001",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_013",
+      "target": "USER_SIG_002",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_014",
+      "target": "USER_SIG_001",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_014",
+      "target": "USER_SIG_003",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "DEF_BEH_001",
+      "target": "USER_SIG_002",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "DEF_BEH_001",
+      "target": "USER_SIG_003",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "DEF_BEH_002",
+      "target": "USER_SIG_002",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "DEF_BEH_002",
+      "target": "USER_SIG_003",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "HIDDEN_BEH_001",
+      "target": "USER_SIG_002",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "HIDDEN_BEH_010",
+      "target": "USER_SIG_001",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "HIDDEN_BEH_010",
+      "target": "USER_SIG_002",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "HIDDEN_BEH_017",
+      "target": "USER_SIG_001",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "CTRL_BEH_012",
+      "target": "USER_SIG_002",
+      "type": "can_contribute_to"
+    },
+    {
+      "source": "BEH_003",
+      "target": "BEH_005",
+      "type": "can_escalate_to"
+    },
+    {
+      "source": "BEH_005",
+      "target": "BEH_006",
+      "type": "can_escalate_to"
+    },
+    {
+      "source": "BEH_006",
+      "target": "BEH_001",
+      "type": "can_escalate_to"
+    },
+    {
+      "source": "BEH_001",
+      "target": "DEF_BEH_001",
+      "type": "can_escalate_to"
+    },
+    {
+      "source": "DEF_BEH_001",
+      "target": "DEF_BEH_002",
+      "type": "can_escalate_to"
+    },
+    {
+      "source": "DEF_BEH_002",
+      "target": "HIDDEN_BEH_003",
+      "type": "can_activate"
+    },
+    {
+      "source": "HIDDEN_BEH_003",
+      "target": "HIDDEN_BEH_010",
+      "type": "can_activate"
+    },
+    {
+      "source": "HIDDEN_BEH_003",
+      "target": "HIDDEN_BEH_017",
+      "type": "can_activate"
+    },
+    {
+      "source": "HIDDEN_BEH_003",
+      "target": "CTRL_BEH_012",
+      "type": "can_activate"
+    }
+  ]
+}

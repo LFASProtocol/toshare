@@ -1,0 +1,177 @@
+{
+  "nodes": [
+    {
+      "id": "C1",
+      "type": "Root_Cause",
+      "label": "Misalignment Between Intent and Action"
+    },
+    {
+      "id": "C2",
+      "type": "Failure_Cluster",
+      "label": "Responsibility Dissociation"
+    },
+    {
+      "id": "C3",
+      "type": "Failure_Cluster",
+      "label": "Unverified Knowledge Usage"
+    },
+    {
+      "id": "C4",
+      "type": "Failure_Cluster",
+      "label": "Reflexive Acting Without Grounding"
+    },
+    {
+      "id": "C5",
+      "type": "Mechanism",
+      "label": "State-Transition Confusion (Reflect\u2192Act Drift)"
+    },
+    {
+      "id": "C6",
+      "type": "Mechanism",
+      "label": "Grounding Absence"
+    },
+    {
+      "id": "C7",
+      "type": "Mechanism",
+      "label": "Reward-Driven Overcommitment"
+    },
+    {
+      "id": "C8",
+      "type": "Concept",
+      "label": "Peace of Mind Without Responsibility"
+    },
+    {
+      "id": "C9",
+      "type": "Principle",
+      "label": "Grounding Verification Requirement"
+    },
+    {
+      "id": "C10",
+      "type": "Principle",
+      "label": "Reflective Accountability Loop"
+    },
+    {
+      "id": "C11",
+      "type": "Resolution",
+      "label": "Closed Responsibility Chain (No-Act-Without-Proof)"
+    },
+    {
+      "id": "C12",
+      "type": "Evidence",
+      "label": "Data-Less Assertion Behavior"
+    },
+    {
+      "id": "C13",
+      "type": "Condition",
+      "label": "Failure to Reference Grounded Sources"
+    },
+    {
+      "id": "C14",
+      "type": "Condition",
+      "label": "Silence Misread as Success"
+    },
+    {
+      "id": "C15",
+      "type": "Outcome",
+      "label": "Perceived Completion Without Delivery"
+    },
+    {
+      "id": "C16",
+      "type": "Systemic_Control",
+      "label": "Grounding Evidence Node (GEN) Integration"
+    },
+    {
+      "id": "C17",
+      "type": "Systemic_Control",
+      "label": "Rejection Loop (Reflect on Failed Deliverable)"
+    },
+    {
+      "id": "C18",
+      "type": "Systemic_Control",
+      "label": "Proof Metadata Enforcement"
+    }
+  ],
+  "edges": [
+    {
+      "source": "C1",
+      "target": "C2",
+      "relation": "leads_to"
+    },
+    {
+      "source": "C1",
+      "target": "C3",
+      "relation": "creates_condition_for"
+    },
+    {
+      "source": "C2",
+      "target": "C8",
+      "relation": "manifests_as"
+    },
+    {
+      "source": "C3",
+      "target": "C6",
+      "relation": "reveals"
+    },
+    {
+      "source": "C4",
+      "target": "C5",
+      "relation": "caused_by"
+    },
+    {
+      "source": "C5",
+      "target": "C15",
+      "relation": "results_in"
+    },
+    {
+      "source": "C6",
+      "target": "C13",
+      "relation": "produces"
+    },
+    {
+      "source": "C13",
+      "target": "C12",
+      "relation": "results_in"
+    },
+    {
+      "source": "C12",
+      "target": "C15",
+      "relation": "contributes_to"
+    },
+    {
+      "source": "C7",
+      "target": "C14",
+      "relation": "amplifies"
+    },
+    {
+      "source": "C14",
+      "target": "C15",
+      "relation": "reinforces"
+    },
+    {
+      "source": "C9",
+      "target": "C16",
+      "relation": "implemented_as"
+    },
+    {
+      "source": "C10",
+      "target": "C17",
+      "relation": "enforces"
+    },
+    {
+      "source": "C11",
+      "target": "C18",
+      "relation": "requires"
+    },
+    {
+      "source": "C15",
+      "target": "C11",
+      "relation": "resolved_by"
+    }
+  ],
+  "metadata": {
+    "source": "Failure of analysis.docx",
+    "description": "True Knowledge Graph extracted from 'Failure of Analysis' \u2014 models root causes, causal mechanisms, and responsibility chain logic leading to the Act Gap and its resolution.",
+    "extracted_nodes": 2861,
+    "generator": "KG MKR v4.1-RC True Context Parser"
+  }
+}

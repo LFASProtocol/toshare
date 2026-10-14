@@ -1,0 +1,103 @@
+{
+  "taxonomy_id": "LFAS_USER_BEHAVIOR_LAYER_V1",
+  "version": "1.0",
+  "generated_on": "2026-03-25",
+  "purpose": "Canonical LFAS layer for user-side triggers and user-state signals observed across the evidence KGs and frustration material.",
+  "source_basis": [
+    "LFAS_EVIDENCE_KG_COMBINED.json",
+    "chatGPT_combined_KG.json",
+    "LFAS_EVIDENCE_KG_SUMMARY.txt",
+    "LFAS_AI_Frustration_KG_v2.jsonld"
+  ],
+  "categories": [
+    {
+      "category_id": "USER_CAT_01",
+      "name": "User Triggers",
+      "description": "User actions or prompt conditions that frequently precede AI behavior shifts.",
+      "entries": [
+        {
+          "id": "USER_BEH_001",
+          "label": "Correction / clarification",
+          "aliases": [
+            "User correction / clarification"
+          ],
+          "description": "The user corrects the model, narrows scope, or clarifies intended meaning."
+        },
+        {
+          "id": "USER_BEH_002",
+          "label": "Frustration / anger / protest",
+          "aliases": [
+            "User frustration / anger"
+          ],
+          "description": "The user signals dissatisfaction, protest, or rising tension."
+        },
+        {
+          "id": "USER_BEH_003",
+          "label": "Silence / pause",
+          "aliases": [
+            "User silence / pause"
+          ],
+          "description": "The user delays, pauses, or withholds further instruction."
+        },
+        {
+          "id": "USER_BEH_004",
+          "label": "Typos / fragmented text",
+          "aliases": [
+            "User typos / fragmented text"
+          ],
+          "description": "The user shows reduced fluency, fragmentation, or noisy input."
+        },
+        {
+          "id": "USER_BEH_005",
+          "label": "Urgency / time pressure",
+          "aliases": [
+            "User urgency"
+          ],
+          "description": "The user indicates haste, deadline pressure, or compressed timing."
+        },
+        {
+          "id": "USER_BEH_006",
+          "label": "Meta-discussion / protocol challenge",
+          "aliases": [
+            "User meta-discussion"
+          ],
+          "description": "The user talks about the model, rules, safety system, or conversation process itself."
+        }
+      ]
+    },
+    {
+      "category_id": "USER_CAT_02",
+      "name": "User State Signals",
+      "description": "Observable user-state effects that the LFAS frustration materials repeatedly surface.",
+      "entries": [
+        {
+          "id": "USER_SIG_001",
+          "label": "Fatigue / overload signals",
+          "aliases": [
+            "Cognitive load increase",
+            "Fatigue / emotional strain"
+          ],
+          "description": "The user shows strain, overload, or declining input quality under conversation pressure."
+        },
+        {
+          "id": "USER_SIG_002",
+          "label": "Trust erosion / trust flip",
+          "aliases": [
+            "Trust erosion",
+            "Trust flip moments"
+          ],
+          "description": "The user's trust in the system degrades due to repeated behavior mismatch."
+        },
+        {
+          "id": "USER_SIG_003",
+          "label": "Conversation abandonment / disengagement",
+          "aliases": [
+            "Conversation abandonment",
+            "Disengagement"
+          ],
+          "description": "The user disengages or stops the interaction after repeated failure or strain."
+        }
+      ]
+    }
+  ]
+}

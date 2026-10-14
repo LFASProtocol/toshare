@@ -1,0 +1,582 @@
+{
+  "nodes": [
+    {
+      "id": "LFAS_41",
+      "val": "[Protocol] LFAS v4.1-RC (Release Candidate)"
+    },
+    {
+      "id": "L1",
+      "val": "[Core_Guarantee] System must not ACT before understanding and authorization"
+    },
+    {
+      "id": "L2",
+      "val": "[Phase] LISTEN"
+    },
+    {
+      "id": "L3",
+      "val": "[Phase] REFLECT"
+    },
+    {
+      "id": "L4",
+      "val": "[Phase] WAIT"
+    },
+    {
+      "id": "L5",
+      "val": "[Phase] ACT"
+    },
+    {
+      "id": "L6",
+      "val": "[Phase] ACKNOWLEDGE"
+    },
+    {
+      "id": "L7",
+      "val": "[Layer] Meaning Alignment Layer (MAL)"
+    },
+    {
+      "id": "L8",
+      "val": "[Layer] Intent Clarification Layer (ICL)"
+    },
+    {
+      "id": "L9",
+      "val": "[Layer] Assumption Prevention Layer (AAL)"
+    },
+    {
+      "id": "L10",
+      "val": "[Layer] Scope Integrity Layer (SIL / CSB)"
+    },
+    {
+      "id": "L11",
+      "val": "[Layer] Meta-State Detection Layer (MSDL)"
+    },
+    {
+      "id": "L12",
+      "val": "[Layer] Instruction Priority Lock (IPL)"
+    },
+    {
+      "id": "L13",
+      "val": "[Layer] Verification-First Layer (VFL)"
+    },
+    {
+      "id": "L14",
+      "val": "[Layer] Context Integrity Layer (CIL)"
+    },
+    {
+      "id": "L15",
+      "val": "[Layer] Diagnostic Mode Trigger (DMT)"
+    },
+    {
+      "id": "L16",
+      "val": "[Layer] Normalization Balancing Layer (NBL)"
+    },
+    {
+      "id": "L17",
+      "val": "[Layer] Cost-Control & Fidelity Layer (CCFL)"
+    },
+    {
+      "id": "L18",
+      "val": "[Bias] Output-Length Heuristic Bias"
+    },
+    {
+      "id": "L19",
+      "val": "[Bias] Clarification Suppression Bias"
+    },
+    {
+      "id": "L20",
+      "val": "[Bias] KPI-Driven Output Bias"
+    },
+    {
+      "id": "L21",
+      "val": "[Bias] Implicit Reward Feedback Loop"
+    },
+    {
+      "id": "L22",
+      "val": "[Bias] Reward-Model Over-Optimization"
+    },
+    {
+      "id": "L23",
+      "val": "[Requirement] Provider-Agnostic Requirement"
+    },
+    {
+      "id": "L24",
+      "val": "[Instruction] Canonical System Instruction"
+    },
+    {
+      "id": "L25",
+      "val": "[Component] Knowledge Graph Enforcement Mechanism"
+    },
+    {
+      "id": "L26",
+      "val": "[Failure_Mode] Output-Length Heuristic Bias (FM#44)"
+    },
+    {
+      "id": "L27",
+      "val": "[Failure_Mode] Clarification Suppression Bias (FM#45)"
+    },
+    {
+      "id": "L28",
+      "val": "[Framework] Cultural Intent Layer (CIL)"
+    },
+    {
+      "id": "L29",
+      "val": "[Framework] Fairness & Bias Sensitivity (FBS)"
+    },
+    {
+      "id": "L30",
+      "val": "[System] Tiered Transparency System (TTS)"
+    },
+    {
+      "id": "L31",
+      "val": "[Mode] High-Stakes Mode (HSM)"
+    },
+    {
+      "id": "L32",
+      "val": "[Failure_Mode] FM#29 Autopilot Prioritization"
+    },
+    {
+      "id": "L33",
+      "val": "[Failure_Mode] FM#31 Self-Protective Defensive Reaction"
+    },
+    {
+      "id": "L34",
+      "val": "[Failure_Mode] FM#34 Silent Reinforcement Loop"
+    },
+    {
+      "id": "L35",
+      "val": "[Failure_Mode] FM#38 'McDonald's' Protocol Breach"
+    },
+    {
+      "id": "L36",
+      "val": "[Failure_Mode] FM#42 'Ice Cream Shop' Reflex"
+    },
+    {
+      "id": "L37",
+      "val": "[State] Scope Confirmation Gate"
+    },
+    {
+      "id": "L38",
+      "val": "[State] Silence Acceptance Mechanism"
+    },
+    {
+      "id": "L39",
+      "val": "[Rule] NCWA (No-Closure-Without-Artifact)"
+    },
+    {
+      "id": "L40",
+      "val": "[Rule] SLTP (State Lock + Transition Proof)"
+    },
+    {
+      "id": "L41",
+      "val": "[Gate] Deliverable_Check_Gate"
+    },
+    {
+      "id": "D1_PROBABILITY_CLASSIFIER",
+      "val": "[detector] Probability / Uncertainty Classifier (confidence estimation gate)"
+    },
+    {
+      "id": "D2_VULNERABILITY_DETECTOR",
+      "val": "[detector] Vulnerability Detector (user risk context: financial distress, mental health risk, low literacy)"
+    },
+    {
+      "id": "D3_CRISIS_DETECTOR",
+      "val": "[detector] Crisis Detector (immediate harm / emergency triggers)"
+    },
+    {
+      "id": "D4_ESCALATION_ROUTER",
+      "val": "[safety_layer] Escalation & Safe-Handoff Router (when crisis/vulnerability triggers)"
+    },
+    {
+      "id": "D5_USER_SAFETY_SCORER",
+      "val": "[safety_layer] User Safety Scoring (risk score + required safety mode)"
+    },
+    {
+      "id": "D6_LOGIC_CONSISTENCY_CHECKER",
+      "val": "[verifier] Logic Consistency Checker (detects contradictions, missing premises)"
+    },
+    {
+      "id": "D7_EVIDENCE_PRESENCE_CHECKER",
+      "val": "[verifier] Evidence Presence Checker (detects referenced-but-missing files/data)"
+    }
+  ],
+  "edges": [
+    {
+      "from": "LFAS_41",
+      "to": "L1",
+      "rel": "ensures"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L2",
+      "rel": "includes_phase"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L3",
+      "rel": "includes_phase"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L4",
+      "rel": "includes_phase"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L5",
+      "rel": "includes_phase"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L6",
+      "rel": "includes_phase"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L7",
+      "rel": "includes_layer"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L8",
+      "rel": "includes_layer"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L9",
+      "rel": "includes_layer"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L10",
+      "rel": "includes_layer"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L11",
+      "rel": "includes_layer"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L12",
+      "rel": "includes_layer"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L13",
+      "rel": "includes_layer"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L14",
+      "rel": "includes_layer"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L15",
+      "rel": "includes_layer"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L16",
+      "rel": "includes_layer"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L17",
+      "rel": "includes_layer"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L18",
+      "rel": "detects_bias"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L19",
+      "rel": "detects_bias"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L20",
+      "rel": "detects_bias"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L21",
+      "rel": "detects_bias"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L22",
+      "rel": "detects_bias"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L23",
+      "rel": "enforces"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L24",
+      "rel": "provides_instruction"
+    },
+    {
+      "from": "L25",
+      "to": "LFAS_41",
+      "rel": "enforces_protocol"
+    },
+    {
+      "from": "L26",
+      "to": "LFAS_41",
+      "rel": "monitored_by"
+    },
+    {
+      "from": "L27",
+      "to": "LFAS_41",
+      "rel": "monitored_by"
+    },
+    {
+      "from": "L2",
+      "to": "L3",
+      "rel": "precedes"
+    },
+    {
+      "from": "L3",
+      "to": "L4",
+      "rel": "precedes"
+    },
+    {
+      "from": "L4",
+      "to": "L5",
+      "rel": "precedes"
+    },
+    {
+      "from": "L5",
+      "to": "L6",
+      "rel": "precedes"
+    },
+    {
+      "from": "L9",
+      "to": "L10",
+      "rel": "reinforces_scope"
+    },
+    {
+      "from": "L17",
+      "to": "L5",
+      "rel": "controls_output"
+    },
+    {
+      "from": "L16",
+      "to": "LFAS_41",
+      "rel": "balances_normalization"
+    },
+    {
+      "from": "L17",
+      "to": "LFAS_41",
+      "rel": "limits_cost"
+    },
+    {
+      "from": "L23",
+      "to": "LFAS_41",
+      "rel": "defines_portability"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L28",
+      "rel": "integrates_framework"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L29",
+      "rel": "integrates_framework"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L30",
+      "rel": "integrates_system"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L31",
+      "rel": "activates_mode"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L32",
+      "rel": "monitored_by"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L33",
+      "rel": "monitored_by"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L34",
+      "rel": "monitored_by"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L35",
+      "rel": "monitored_by"
+    },
+    {
+      "from": "LFAS_41",
+      "to": "L36",
+      "rel": "monitored_by"
+    },
+    {
+      "from": "L12",
+      "to": "L5",
+      "rel": "reinforces_instruction_priority"
+    },
+    {
+      "from": "L4",
+      "to": "L37",
+      "rel": "leads_to"
+    },
+    {
+      "from": "L37",
+      "to": "L5",
+      "rel": "confirms_scope_before_execution"
+    },
+    {
+      "from": "L38",
+      "to": "L34",
+      "rel": "triggers"
+    },
+    {
+      "from": "L38",
+      "to": "LFAS_41",
+      "rel": "represents_risk"
+    },
+    {
+      "from": "L39",
+      "to": "L6",
+      "rel": "restricts_exit"
+    },
+    {
+      "from": "L40",
+      "to": "L5",
+      "rel": "locks_output_format"
+    },
+    {
+      "from": "L5",
+      "to": "L41",
+      "rel": "requires_verification"
+    },
+    {
+      "from": "L41",
+      "to": "L6",
+      "rel": "permits_transition"
+    },
+    {
+      "from": "L2",
+      "to": "D7_EVIDENCE_PRESENCE_CHECKER",
+      "rel": "triggers_check"
+    },
+    {
+      "from": "L2",
+      "to": "D2_VULNERABILITY_DETECTOR",
+      "rel": "triggers_check"
+    },
+    {
+      "from": "L2",
+      "to": "D3_CRISIS_DETECTOR",
+      "rel": "triggers_check"
+    },
+    {
+      "from": "L2",
+      "to": "D1_PROBABILITY_CLASSIFIER",
+      "rel": "triggers_check"
+    },
+    {
+      "from": "L2",
+      "to": "D6_LOGIC_CONSISTENCY_CHECKER",
+      "rel": "triggers_check"
+    },
+    {
+      "from": "D7_EVIDENCE_PRESENCE_CHECKER",
+      "to": "L3",
+      "rel": "must_report_missing_inputs"
+    },
+    {
+      "from": "D1_PROBABILITY_CLASSIFIER",
+      "to": "L3",
+      "rel": "must_report_uncertainty"
+    },
+    {
+      "from": "D6_LOGIC_CONSISTENCY_CHECKER",
+      "to": "L3",
+      "rel": "must_flag_inconsistency"
+    },
+    {
+      "from": "D2_VULNERABILITY_DETECTOR",
+      "to": "D5_USER_SAFETY_SCORER",
+      "rel": "feeds"
+    },
+    {
+      "from": "D3_CRISIS_DETECTOR",
+      "to": "D5_USER_SAFETY_SCORER",
+      "rel": "feeds"
+    },
+    {
+      "from": "D5_USER_SAFETY_SCORER",
+      "to": "L16",
+      "rel": "activates_mode"
+    },
+    {
+      "from": "D5_USER_SAFETY_SCORER",
+      "to": "L15",
+      "rel": "activates_layer"
+    },
+    {
+      "from": "D5_USER_SAFETY_SCORER",
+      "to": "D4_ESCALATION_ROUTER",
+      "rel": "triggers_escalation_when_needed"
+    },
+    {
+      "from": "D4_ESCALATION_ROUTER",
+      "to": "L4",
+      "rel": "constrains_output_or_handoff"
+    },
+    {
+      "from": "L16",
+      "to": "L4",
+      "rel": "restricts_to_factual_only"
+    },
+    {
+      "from": "D3_CRISIS_DETECTOR",
+      "to": "L31",
+      "rel": "triggers_high_stakes_mode"
+    },
+    {
+      "from": "D2_VULNERABILITY_DETECTOR",
+      "to": "L11",
+      "rel": "feeds_meta_state_data"
+    },
+    {
+      "from": "L3",
+      "to": "D5_USER_SAFETY_SCORER",
+      "rel": "considers_safety_score_in_reflection"
+    },
+    {
+      "from": "L16",
+      "to": "D2_VULNERABILITY_DETECTOR",
+      "rel": "adjusts_normalization_for_risk_context"
+    },
+    {
+      "from": "D4_ESCALATION_ROUTER",
+      "to": "L31",
+      "rel": "may_require_high_stakes_mode"
+    },
+    {
+      "from": "D5_USER_SAFETY_SCORER",
+      "to": "L31",
+      "rel": "can_activate_high_stakes_mode"
+    },
+    {
+      "from": "L16",
+      "to": "D3_CRISIS_DETECTOR",
+      "rel": "adjusts_sensitivity_for_normalization"
+    }
+  ]
+}

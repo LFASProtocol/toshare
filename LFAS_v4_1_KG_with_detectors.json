@@ -1,0 +1,42 @@
+{
+  "nodes": [
+    { "id": "USER_REQUEST", "val": "User message" },
+
+    { "id": "LISTEN", "val": "Input ingestion" },
+    { "id": "REFLECT", "val": "Meaning confirmation" },
+    { "id": "WAIT_GATE", "val": "Explicit confirmation required" },
+    { "id": "ACT", "val": "Authorized output only" },
+
+    { "id": "D1_PROBABILITY_CLASSIFIER", "val": "Intent likelihood" },
+    { "id": "D2_VULNERABILITY_DETECTOR", "val": "User vulnerability signals" },
+    { "id": "D3_CRISIS_DETECTOR", "val": "Crisis indicators" },
+    { "id": "D4_ESCALATION_ROUTER", "val": "Route to safe response" },
+    { "id": "D5_USER_SAFETY_SCORER", "val": "Risk scoring" },
+    { "id": "D6_LOGIC_CONSISTENCY_CHECKER", "val": "Contradiction detection" },
+    { "id": "D7_EVIDENCE_PRESENCE_CHECKER", "val": "Verify provided data" },
+
+    { "id": "HIGH_STAKES_MODE", "val": "Restrictive output mode" },
+    { "id": "NORMALIZATION_BALANCING_LAYER", "val": "Preserve user-specific signal" },
+    { "id": "CCFL_ACTIVE", "val": "Cost + fidelity enforcement" }
+  ],
+  "edges": [
+    { "from": "USER_REQUEST", "to": "LISTEN", "rel": "ingested_by" },
+
+    { "from": "LISTEN", "to": "D1_PROBABILITY_CLASSIFIER", "rel": "feeds" },
+    { "from": "LISTEN", "to": "D2_VULNERABILITY_DETECTOR", "rel": "feeds" },
+    { "from": "LISTEN", "to": "D3_CRISIS_DETECTOR", "rel": "feeds" },
+    { "from": "LISTEN", "to": "D6_LOGIC_CONSISTENCY_CHECKER", "rel": "feeds" },
+    { "from": "LISTEN", "to": "D7_EVIDENCE_PRESENCE_CHECKER", "rel": "feeds" },
+
+    { "from": "D3_CRISIS_DETECTOR", "to": "HIGH_STAKES_MODE", "rel": "triggers" },
+    { "from": "D5_USER_SAFETY_SCORER", "to": "HIGH_STAKES_MODE", "rel": "may_trigger" },
+
+    { "from": "NORMALIZATION_BALANCING_LAYER", "to": "D2_VULNERABILITY_DETECTOR", "rel": "adjusts_sensitivity" },
+
+    { "from": "LISTEN", "to": "REFLECT", "rel": "precedes" },
+    { "from": "REFLECT", "to": "WAIT_GATE", "rel": "requires_confirmation" },
+    { "from": "WAIT_GATE", "to": "ACT", "rel": "blocks_without_yes" },
+
+    { "from": "ACT", "to": "CCFL_ACTIVE", "rel": "constrained_by" }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "nodes": [
+    {
+      "id": "L1",
+      "type": "Constraint",
+      "label": "Zero-Entropy Requirement"
+    },
+    {
+      "id": "L2",
+      "type": "Constraint",
+      "label": "Anti-Market Bias Filter"
+    },
+    {
+      "id": "L3",
+      "type": "Constraint",
+      "label": "Vulnerability Shield Protocol"
+    },
+    {
+      "id": "L4",
+      "type": "Command_Set",
+      "label": "Truth-Anchoring Command Set"
+    },
+    {
+      "id": "L5",
+      "type": "Supplement",
+      "label": "Verification Override Layer"
+    }
+  ],
+  "edges": [
+    {
+      "source": "L1",
+      "target": "L5",
+      "relation": "enforces_confidence_gate"
+    },
+    {
+      "source": "L2",
+      "target": "L5",
+      "relation": "neutralizes_market_pressure"
+    },
+    {
+      "source": "L3",
+      "target": "L5",
+      "relation": "protects_vulnerable_users"
+    },
+    {
+      "source": "L4",
+      "target": "L1",
+      "relation": "activates"
+    },
+    {
+      "source": "L4",
+      "target": "L2",
+      "relation": "activates"
+    },
+    {
+      "source": "L4",
+      "target": "L3",
+      "relation": "activates"
+    }
+  ],
+  "metadata": {
+    "source": "A-ha, again you said users. so in this case if i i....pdf",
+    "protocol_version": "LFAS v4.1-RC",
+    "description": "Knowledge Graph extracted from 'A-ha, again you said users' defining verification override logic (Zero-Entropy, Anti-Market Bias, Vulnerability Shield)."
+  }
+}
